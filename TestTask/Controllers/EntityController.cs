@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using TestTask.Models;
 using TestTask.Repositories;
@@ -13,6 +14,7 @@ namespace TestTask.Controllers
     public class EntityController : ControllerBase
     {
         private readonly IEntityRepository _entityRepository;
+        private static readonly HttpClient client = new HttpClient();
 
         public EntityController(IEntityRepository entityRepository)
         {
